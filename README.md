@@ -110,9 +110,9 @@ SHAP rank stability was validated across 5 CV folds. All 19 features show HIGH s
 
 ### Risk Score Separation
 
-![Risk Score Distribution](images/Risk_Score_Distribution.png)
+![Risk Score Distribution](images/Risk_Score_Distribution.jpg)
 
-![Risk Score Density](images/Risk_Score_Density.png)
+![Risk Score Density](images/Risk_Score_Density.jpg)
 
 | Population | Mean Risk Score |
 |---|---|
@@ -123,11 +123,11 @@ Near-perfect separation between benign and malicious score distributions. Benign
 
 ### Risk Tier Classification with Lift
 
-![Risk Tier Lift](images/Risk_Tier_Lift.png)
+![Risk Tier Lift](images/Risk_Tier_Lift.jpg)
 
-![Risk Tier Malicious Rate](images/Risk_Tier_Malicious_Rate.png)
+![Risk Tier Malicious Rate](images/Risk_Tier_Malicious_Rate.jpg)
 
-![Risk Tier User Counts](images/Risk_Tier_User_Counts.png)
+![Risk Tier User Counts](images/Risk_Tier_User_Counts.jpg)
 
 | Tier | Users | Malicious | Mal Rate | Lift | % of All Malicious |
 |---|---|---|---|---|---|
@@ -140,15 +140,15 @@ Near-perfect separation between benign and malicious score distributions. Benign
 
 ### SHAP Tier Analysis and Explainability Gap
 
-![SHAP Tier Drivers](images/SHAP_Tier_Drivers.png)
+![SHAP Tier Drivers](images/SHAP_Tier_Drivers.jpg)
 
-![SHAP Explainability Gap](images/SHAP_Explainability_Gap.png)
+![SHAP Explainability Gap](images/SHAP_Explainability_Gap.jpg)
 
 The Critical tier is dominated by unique_devices_per_day and logoff_count. The Explainability Gap analysis reveals that device_count is the primary differentiator between true insiders (SHAP 0.0645) and false alarms (SHAP 0.0248) in the Critical/High tiers. False alarms tend to be driven by logoff_count and after_hours_ratio rather than device activity, a pattern analysts can use to triage alerts more efficiently.
 
 ### Score Calibration
 
-![Calibration Curve](images/Risk_Score_Calibration_Curve.png)
+![Calibration Curve](images/Risk_Score_Calibration_Curve.jpg)
 
 | Method | Brier Score | Improvement |
 |---|---|---|
@@ -160,17 +160,17 @@ The calibration curve confirms that isotonic-calibrated scores track closely to 
 
 ### Temporal Risk Trajectory
 
-![Risk Trajectory Malicious](images/Risk_Trajectory_Malicious.png)
+![Risk Trajectory Malicious](images/Risk_Trajectory_Malicious.jpg)
 
-![Risk Trajectory Benign](images/Risk_Trajectory_Benign.png)
+![Risk Trajectory Benign](images/Risk_Trajectory_Benign.jpg)
 
 All five tracked malicious users show a clear low-and-slow behavioral ramp-up, crossing the Critical threshold between mid-2010 and early 2011. Benign users remain near zero throughout the observation period, with one temporary spike that self-corrects, the behavioral signature of a false positive.
 
 ### Risk Velocity
 
-![Risk Velocity Malicious](images/Risk_Velocity_Malicious.png)
+![Risk Velocity Malicious](images/Risk_Velocity_Malicious.jpg)
 
-![Risk Velocity Distribution](images/Risk_Velocity_Distribution.png)
+![Risk Velocity Distribution](images/Risk_Velocity_Distribution.jpg)
 
 | Metric | Value |
 |---|---|
@@ -183,9 +183,9 @@ Malicious users show velocity spikes concentrated in mid-2010 (July to October),
 
 ### Feature Stability
 
-![Feature Stability](images/Feature_Stability.png)
+![Feature Stability](images/Feature_Stability.jpg)
 
-All 19 features show HIGH stability (std < 2.0 across all 5 CV folds). The top 6 features (unique_devices_per_day through logon_count) have std = 0.00, an identical rankings across all five folds. The model's risk drivers are reproducible properties of the detection system, not artifacts of any particular data partition.
+All 19 features show HIGH stability (std < 2.0 across all 5 CV folds). The top 6 features (unique_devices_per_day through logon_count) have std = 0.00, as identical rankings across all five folds. The model's risk drivers are reproducible properties of the detection system, not artifacts of any particular data partition.
 
 **Policy-to-feature mapping:**
 
